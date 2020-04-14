@@ -18,39 +18,39 @@ class MensagemView extends View{
 
 // Não é necessário criar outra classe que herde de Conta por enquanto, a ideia aqui é apenas focar o design da classe.
 
-class Conta {
-    constructor(saldo){
-        this._saldo = saldo
-    }
+// class Conta {
+//     constructor(saldo){
+//         this._saldo = saldo
+//     }
 
-    get saldo(){
-        return this._saldo
-    }
+//     get saldo(){
+//         return this._saldo
+//     }
 
-    atualiza(taxa){
-        throw new Error(" You need to override the method 'atualiza' in the child class")
-    }
-}
+//     atualiza(taxa){
+//         throw new Error(" You need to override the method 'atualiza' in the child class")
+//     }
+// }
 
-class ContaCorrente extends Conta{
-    constructor(saldo){
-        super(saldo)
-    }
+// class ContaCorrente extends Conta{
+//     constructor(saldo){
+//         super(saldo)
+//     }
     
-    atualiza(taxa){
-        this._saldo += taxa
-    }
-}
+//     atualiza(taxa){
+//         this._saldo += taxa
+//     }
+// }
 
-class ContaPoupanca extends Conta{
-    constructor(saldo){
-        super(saldo)
-    } 
+// class ContaPoupanca extends Conta{
+//     constructor(saldo){
+//         super(saldo)
+//     } 
     
-    atualiza(taxa){
-        this._saldo += taxa*2
-    }
-}
+//     atualiza(taxa){
+//         this._saldo += taxa*2
+//     }
+// }
 // conta1 = new ContaCorrente(200);
 // conta2 = new ContaPoupanca(300);
 // conta1.atualiza(2);

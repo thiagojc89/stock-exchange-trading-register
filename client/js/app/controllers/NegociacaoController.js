@@ -8,7 +8,10 @@ class NegociacaoController {
         this._inputData = $('#data')
         this._inputValor = $('#valor')
         
-        this._listaNegociacoes = new ListaNegociacoes()
+        this._listaNegociacoes = new ListaNegociacoes((model)=> {
+            this._negociacoesView.update(model)
+        })
+
         this._negociacoesView = new NegociacoesView($('#negociacoesView'))
         this._negociacoesView.update(this._listaNegociacoes)
         
@@ -45,6 +48,13 @@ class NegociacaoController {
         this._clearForm()
         
     }
+    deleteList (){
+        this._listaNegociacoes.deleteAll()
+        this._negociacoesView.update(this._listaNegociacoes)
+
+        this._mensagem.text = "Trading register list deleted"
+        // this._mensagemView.update(this._mensagem)
+    }
     _criaNegociacao(){
         return new Negociacao(
             DateHelper.textToDate(this._inputData.value),
@@ -57,7 +67,6 @@ class NegociacaoController {
         this._inputData.value = ""
         this._inputQuantidade.value = "1"
         this._inputValor.value= "0.0"
-
         this._inputData.focus()
     }
 

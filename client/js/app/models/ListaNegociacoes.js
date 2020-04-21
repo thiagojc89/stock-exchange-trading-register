@@ -1,11 +1,10 @@
 class ListaNegociacoes {
-    constructor(armadilha){
-        this._negociacoes = [],
-        this._armadilha = armadilha // this is a function that will call the update method on the View
+    constructor(){
+        this._negociacoes = []
     }
     addNegociacao(negociacao){
         this._negociacoes.push(negociacao)
-        this._armadilha(this)
+        
     }
     get negociacoes (){
         // here I am using the spread operator as a defensive programming to avoid
@@ -14,6 +13,5 @@ class ListaNegociacoes {
     }
     deleteAll (){
         this._negociacoes = []
-        this._armadilha(this)
     }
 }
